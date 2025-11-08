@@ -1,28 +1,40 @@
-class Animal{    // == parent_class, INDICATING ANIMALS SOUNDS==
-    public void animals(){
-        System.out.println("Animals makes sound");
+class WindowsOS {
+    void company() {
+        System.out.println("Microsoft Windows");
     }
-}
-// 'extends'--> KEYWORD IS USED TO INHERIT PROPERTIES AND BEHAVIORS OF THE parent_class
-class Dog extends Animal{ // THIS DOG CLASS(sub_class / child_class) IS DERIVED(extends) FROM ANIMAL(parent_class) 
-    void dog(){
-        System.out.println("Animals makes sound, under that DOG Barks!!!");
-    }
-}
-class Cat extends Animal{
-    void cat(){  // HERE THE 'cat()' IS USER-DEFINED ONE. WE CAN CREATE OUR OWN!
-        System.out.println("Animals makes sound, under that CAT Meows!!!");
+} 
+
+class Windows7 extends WindowsOS {
+    void version() {
+        System.out.println("Windows 7");
     }
 }
 
+class Windows8 extends WindowsOS {
+    void version() {
+        System.out.println("Windows 8");
+    }
+}
 
-public class classObj {
-    public static void main (String[]args){
-       Animal a1 = new Animal(); // CREATING parent_class
-       Dog a2 = new Dog(); // sub_class
-       Cat a3 = new Cat(); // sub_class
-       a1.animals(); // CALLING THE METHOD
-       a2.dog();
-       a3.cat();
+class Windows10 extends WindowsOS {
+    void version() {
+        System.out.println("Windows 10");
+    }
+}
+
+public class inherit {
+    public static void main(String[] args) {
+        Windows7 win7 = new Windows7();
+        Windows8 win8 = new Windows8();
+        Windows10 win10 = new Windows10();
+        
+        win7.company();  // Inherited from parent
+        win7.version();  // Own method
+        
+        win8.company();  // Inherited from parent  
+        win8.version();  // Own method
+        
+        win10.company(); // Inherited from parent
+        win10.version(); // Own method
     }
 }
